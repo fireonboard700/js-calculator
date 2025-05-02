@@ -58,11 +58,16 @@ digits.forEach((button) => {
             display.textContent = "";
         }
 
+        if (digit === "." && display.textContent.includes(digit)) {
+            // decimal point already present, disable.
+            return;
+        }
         if (op === "") {
             a.push(digit);
         } else {
             b.push(digit);
         }
+
         display.textContent += digit;
     });
 });
